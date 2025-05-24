@@ -13,5 +13,8 @@
       "destination": "https://store.craftz.dog/b/65jPS",
       "statusCode": 302
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs"
 }
