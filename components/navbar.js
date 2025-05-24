@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub } from 'react-icons/io5'
+import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -28,7 +28,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       href={href}
       scroll={false}
       p={2}
-      bg={active ? 'grassTeal' : undefined}
+      bg={active ? 'primary.200' : undefined}
       color={active ? '#202023' : inactiveColor}
       target={target}
       {...props}
@@ -50,7 +50,7 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('#ffffff40', '#1a1b1e80')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={2}
       {...props}
@@ -77,19 +77,24 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}>
-            Works
+          <LinkItem href="/blog" path={path}>
+            Blog
           </LinkItem>
-          <LinkItem href="https://store.craftz.dog/" path={path}>
-            Wallpapers
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
-          <LinkItem href="https://uses.craftz.dog/">Uses</LinkItem>
           <LinkItem
             target="_blank"
-            href="https://github.com/craftzdog/craftzdog-homepage"
+            href="https://linkedin.com/in/gentmaks"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            <IoLogoLinkedin />
+            LinkedIn
+          </LinkItem>
+          <LinkItem
+            target="_blank"
+            href="https://github.com/gentmaks"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -97,7 +102,7 @@ const Navbar = props => {
             pl={2}
           >
             <IoLogoGithub />
-            Source
+            GitHub
           </LinkItem>
         </Stack>
 
@@ -116,23 +121,22 @@ const Navbar = props => {
                 <MenuItem as={MenuLink} href="/">
                   About
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/works">
-                  Works
-                </MenuItem>
-                <MenuItem as={MenuLink} href="https://store.craftz.dog/">
-                  Wallpapers
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/posts">
-                  Posts
-                </MenuItem>
-                <MenuItem as={MenuLink} href="https://uses.craftz.dog/">
-                  Uses
+                <MenuItem as={MenuLink} href="/blog">
+                  Blog
                 </MenuItem>
                 <MenuItem
                   as={Link}
-                  href="https://github.com/craftzdog/craftzdog-homepage"
+                  href="https://linkedin.com/in/gentmaks"
+                  target="_blank"
                 >
-                  View Source
+                  LinkedIn
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="https://github.com/gentmaks"
+                  target="_blank"
+                >
+                  GitHub
                 </MenuItem>
               </MenuList>
             </Menu>
